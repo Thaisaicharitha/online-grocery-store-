@@ -1,0 +1,101 @@
+/* Existing styles... */
+
+/* Set a background image for the body */
+body {
+    background-image: url('https://tse3.mm.bing.net/th?id=OIP.I0-g4EapQZjqtdGmLvONgAHaEz&pid=Api&P=0&h=180'); /* Replace with your image URL */
+    background-size: contain; /* Cover the entire area */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Optional: set a font for the body */
+    margin: 0; /* Reset margin */
+}
+
+/* Container styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px; /* Add padding to the container */
+    background-color: rgba(138, 205, 70, 0.8); /* Optional: semi-transparent background for better readability */
+    border-radius: 10px; /* Optional: rounded corners for the container */
+}
+
+/* Style for product gallery images */
+.gallery img {
+    width: 150px; /* Set a width for the images */
+    height: auto; /* Maintain aspect ratio */
+    margin: 10px; /* Add margin around each image */
+    border: 1px solid #51a825; /* Optional: Add a border for visual separation */
+    border-radius: 8px; /* Optional: Rounded corners */
+    transition: transform 0.2s; /* Smooth scaling effect on hover */
+}
+
+/* Scale the image on hover */
+.gallery img:hover {
+    transform: scale(1.1); /* Scale effect */
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.product-item {
+    width: 200px;
+    margin: 15px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+/* Existing styles */
+
+
+/* Discount box styling */
+.discount-box {
+    text-align: center;
+    padding: 15px;
+    margin: 20px auto;
+    font-size: 20px;
+    color: white;
+    background-color: #ff0000;
+    width: 300px;
+    border: 2px dashed #fff;
+    animation: blink 1s infinite, sparkle 3s infinite;
+    border-radius: 5px;
+}
+
+/* Blinking effect */
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+
+/* Sparkling effect */
+@keyframes sparkle {
+    0%, 100% { box-shadow: 0 0 5px #fff, 0 0 10px #fff; }
+    50% { box-shadow: 0 0 15px #fff, 0 0 20px #ff00ff; }
+}
+
+
+.quantity-control {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.quantity-control button {
+    margin: 0 5px;
+}
+
+
+/* Additional styles for cart and payment section */
+.cart {
+    margin-top: 20px; /* Add margin on top */
+}
+
+.payment-section {
+    margin-top: 20px; /* Add margin on top */
+}

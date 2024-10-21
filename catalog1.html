@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Product Catalog</h1>
+        <label for="groceryType">Select Grocery Type:</label>
+        <select id="groceryType">
+            <option value="" disabled selected>Select a grocery</option>
+            <option value="fruits">Fruits</option>
+            <option value="vegetables">Vegetables</option>
+            <option value="dairy">Dairy</option>
+        </select>
+
+        <div id="productGallery" class="gallery"></div>
+
+        <div class="cart">
+            <h2>Cart</h2>
+            <ul id="cartItems"></ul>
+            <p>Total: $<span id="totalAmount">0.00</span></p>
+            <button id="checkout">Checkout</button>
+        </div>
+
+        <div class="payment-section" id="paymentSection" style="display: none;">
+            <h2>Payment Options</h2>
+            <form id="paymentForm">
+                <label>
+                    <input type="radio" name="paymentMethod" value="creditCard" required>
+                    Credit Card
+                </label><br>
+                <label>
+                    <input type="radio" name="paymentMethod" value="upi">
+                    UPI
+                </label><br>
+                <label>
+                    <input type="radio" name="paymentMethod" value="paypal">
+                    PayPal
+                </label><br>
+                <button type="submit">Proceed to Payment Gateway</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="catalog1.js"></script>
+</body>
+</html>

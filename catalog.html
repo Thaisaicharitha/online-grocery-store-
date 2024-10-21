@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+    <link rel="stylesheet" href="styles1.css">
+    <style>
+        /* Add basic styles for the gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Space between images */
+            justify-content: center; /* Center the gallery */
+        }
+        .category {
+            text-align: center;
+            cursor: pointer;
+        }
+        .category img {
+            width: 150px; /* Set a fixed size for the category images */
+            height: 150px; /* Keep the aspect ratio */
+            border-radius: 8px; /* Round the corners */
+            transition: transform 0.2s; /* Animation effect */
+        }
+        .category img:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+        .product-item {
+            text-align: center;
+        }
+        .product-item img {
+            width: 100px; /* Set a fixed size for product images */
+            height: 100px; /* Keep the aspect ratio */
+        }
+        /* Scrolling quote styles */
+        .scrolling-quote {
+            background-color: #aa79ad; /* Light green background */
+            color: #0c0c0c; /* Dark text */
+            padding: 10px; /* Padding around the text */
+            white-space: nowrap; /* Prevent text from wrapping */
+            overflow: hidden; /* Hide overflow */
+            box-shadow: 0 2px 5px rgba(115, 55, 55, 0.1); /* Add shadow */
+            font-weight: bold; /* Make the text bold */
+            position: relative; /* Relative position for absolute scrolling */
+            height: 30px; /* Set a fixed height */
+            line-height: 30px; /* Make sure text vertically aligns */
+        }
+        .scrolling-text {
+            position: absolute; /* Absolute positioning for the scrolling text */
+            animation: scroll-text 30s linear infinite; /* Animation duration */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust for centering */
+        }
+        @keyframes scroll-text {
+            0% {
+                transform: translateX(100%); /* Start from the right */
+            }
+            100% {
+                transform: translateX(-100%); /* End at the left */
+            }
+        }
+        .payment-options {
+            display: none; /* Hidden by default */
+            margin-top: 20px;
+        }
+        .payment-option {
+            display: inline-block; /* Align options in a row */
+            border: 1px solid #ccc;
+            border-radius: 10px; /* Rounded corners */
+            padding: 10px;
+            text-align: center;
+            margin: 10px;
+            width: 120px; /* Set a fixed width for the boxes */
+            transition: box-shadow 0.3s; /* Add a transition for hover effect */
+        }
+        .payment-option:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+        }
+        .payment-logo {
+            width: 80px; /* Adjust the width of logos */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <div class="scrolling-quote">
+        <div class="scrolling-text">“FARM FRESH FRUITS AND VEGETABLES” -----NOTE:All Starts From The Given Range (Fruits and veggies are for 1KG and REST are for each pack)</div>
+    </div>
+
+    <div class="container">
+        <h1>Product Catalog</h1>
+        
+        <div id="categoryGallery" class="gallery">
+            <div class="category" onclick="displayProducts('fruits')">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.22XOhxYrd_Pu__NkrGadMgHaEo&pid=Api&P=0&h=180" alt="Fruits">
+                <p>Fruits</p>
+            </div>
+            <div class="category" onclick="displayProducts('vegetables')">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.z4_4HDtQA7m9dlTvkTwxOAHaDd&pid=Api&P=0&h=180" alt="Vegetables">
+                <p>Vegetables</p>
+            </div>
+            <div class="category" onclick="displayProducts('grainsandflours')">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.nxRLphGMoEvjGnW80eYzOgAAAA&pid=Api&P=0&h=180" alt="Grains and Flours">
+                <p>Grains & Flours</p>
+            </div>
+            <div class="category" onclick="displayProducts('laundry')">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.D-Q55jHzwWQOx8EqRbi4gQAAAA&pid=Api&P=0&h=180" alt="laundry">
+                <p>Laundry</p>
+            </div>
+            <div class="category" onclick="displayProducts('dairyproducts')">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.B7EVvNod-k6RoMlt7my60AHaE8&pid=Api&P=0&h=180" alt="dairyproducts">
+                <p>Dairy Products</p>
+            </div>
+            <div class="category" onclick="displayProducts('conditioners')">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.oYbS2fH9Ov8MiYy5RmlYdgHaEc&pid=Api&P=0&h=180" alt="conditioners">
+                <p>Conditioners</p>
+            </div>
+            <div class="category" onclick="displayProducts('toothpaste&brushes')">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.R4gfChl519NOPcVmQbyRDAHaE7&pid=Api&P=0&h=180" alt="toothpaste&brushes">
+                <p>Toothpaste & Brushes</p>
+            </div>
+            <div class="category" onclick="displayProducts('snacks')">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.7siXTZCba_d96YXnaYLyowHaFj&pid=Api&P=0&h=180" alt="snacks">
+                <p>Snacks</p>
+            </div>
+            <div class="category" onclick="displayProducts('breadsandcakes')">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.L3_ihPkJPp4UIQElGbIbrAHaEK&pid=Api&P=0&h=180" alt="breadsandcakes">
+                <p>Breads & Cakes</p>
+            </div>
+            <!-- Add more categories as needed -->
+        </div>
+
+        <div id="productGallery" class="gallery"></div>
+
+        <div class="cart">
+            <h2>Cart</h2>
+            <ul id="cartItems"></ul>
+            <p>Total: ₹<span id="totalAmount">0.00</span></p>
+            <button id="checkout">Checkout</button>
+        </div>
+        
+        <h2 id="cart-status" style="display:none;">Items added to cart!</h2>
+        
+        <div id="paymentOptions" class="payment-options">
+            <h3>Select Payment Method:</h3>
+            <div class="d-flex justify-content-center">
+                <div class="payment-option">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.NPKkHAr2288KTx-VtO3SBwAAAA&pid=Api&P=0&h=180" class="payment-logo" alt="Phonepe">
+                    <p>PhonePe</p>
+                </div>
+                <div class="payment-option">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.zAifN3Z_1dBdiD760GYQbQHaC9&pid=Api&P=0&h=180" class="payment-logo" alt="Razor PAY">
+                    <p>Razor Pay</p>
+                </div>
+                <div class="payment-option">
+                    <img src="https://up.yimg.com/ib/th?id=OIP.P-yCq0C-xpaNGYc463C1EwHaHa&pid=Api&rs=1&c=1&qlt=95&w=105&h=105" class="payment-logo" alt="Google Pay">
+                    <p>Google Pay</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="catalog.js"></script>
+    <script>
+        // Add click event listener to Checkout button
+        document.getElementById("checkout").addEventListener("click", function() {
+            document.getElementById("paymentOptions").style.display = "block"; // Show payment options
+        });
+    </script>
+</body>
+</html>
